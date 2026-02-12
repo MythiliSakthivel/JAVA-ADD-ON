@@ -1,0 +1,24 @@
+package selectionprg;
+
+class OperatingSystem
+{
+	void version()
+	{
+		System.out.println("WINDOWS10");
+	}
+}
+class Toos extends OperatingSystem
+{
+	void version()
+	{
+		System.out.println("WINDOWS11");
+	}
+}
+public class Mainclass 
+{
+	public static void main(String[] args) 
+	{
+		Toos ref = new Toos();
+		ref.version();
+	}
+}
