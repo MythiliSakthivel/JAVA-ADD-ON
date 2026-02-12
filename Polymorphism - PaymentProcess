@@ -1,0 +1,22 @@
+package selectionprg;
+
+class Topay
+{
+	void Amount(String Upi)
+	{
+		System.out.println("upiid" + " " + Upi);
+	}
+	void Amount(int inhandmoney)
+	{
+		System.out.println("Enter The Amount" + inhandmoney);
+	}
+}
+public class Polymorphism 
+{
+	public static void main(String[] args) 
+	{
+		Topay pay = new Topay();
+		pay.Amount("java@bank");
+		pay.Amount(2700);
+	}
+}
