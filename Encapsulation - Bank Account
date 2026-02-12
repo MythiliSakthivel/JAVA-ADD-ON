@@ -1,22 +1,50 @@
 package selectionprg;
 
-class Demo
+class Account
 {
-String Carname;
-int ModelYear;
-Demo(String Carname,int ModelYear)
-{
-this.Carname = Carname;
-this.ModelYear = ModelYear;
-System.out.println("CONSTRUCTOR");
+	private String HolderName;
+	private int Bank_Balance;
+	Account(String HolderName , int Bank_Balance)
+	{
+		this.HolderName = HolderName;
+		this.Bank_Balance = Bank_Balance;
+	}
+	public String getHolderName()
+	{
+		return HolderName;
+	}
+	public int getBank_Balance()
+	{
+		return Bank_Balance;
+	}
+	public void Deposit(int amount)
+	{
+		Bank_Balance += amount;
+		System.out.println("Deposit Amount: "+amount);
+	}
+	public void Withdrawal(int amount)
+    {
+        if(amount <= Bank_Balance)
+        {
+            Bank_Balance -= amount;
+            System.out.println("Withdraw Amount: " + amount);
+        }
+        else
+        {
+            System.out.println("Insufficient Balance!");
+        }
+    }
 }
-}
-public class constructor
+public class Encapsulation 
 {
-public static void main(String[] args)
-{
-Demo d = new Demo ("Thar" , 1927);
-System.out.println(d.Carname);
-System.out.println(d.ModelYear);
-}
+	public static void main(String[] args) 
+	{
+		Account ac = new Account("JAVA" , 27000);
+		System.out.println("Account HolderName: "+" "+ac.getHolderName());
+		System.out.println("Current Bank_Balance: "+" "+ac.getBank_Balance());
+		ac.Deposit(2000);
+		System.out.println("Amount Creadited: " +ac.getBank_Balance());
+		ac.Withdrawal(5000);
+        System.out.println("After Withdrawal Balance: " + ac.getBank_Balance());
+	}
 }
